@@ -29,8 +29,8 @@ function GetModelViewProjection( projectionMatrix, translationX, translationY, t
 	let rotation_about_xy = MatrixMult(rotation_about_x, rotation_about_y);
 
 	// By rotating first, you ensure rotation about center of object
-	let mvp = MatrixMult(trans, rotation_about_xy);
-	mvp = MatrixMult( projectionMatrix, mvp );
+	let mv = MatrixMult(trans, rotation_about_xy);
+	let mvp = MatrixMult( projectionMatrix, mv );
 	return mvp;
 }
 
